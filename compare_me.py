@@ -92,7 +92,7 @@ def build_algorithm_config():
 
 if __name__ == "__main__":
     mp.freeze_support()
-    from MOGPD_statistics_pc import GPFC
+    from MO_GP_statistics_pc import GPFC
 
     simulation_config = build_simulation_config()
     algorithm_config = build_algorithm_config()

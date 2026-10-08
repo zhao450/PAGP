@@ -2,13 +2,13 @@ import simpy
 from deap import base
 from deap import creator
 from deap import gp
-from MOGPD_statistics_pc import ea_simple_elitism
-from MOGPD_statistics_pc.ParallelToolbox import ParallelToolbox
-from MOGPD_statistics_pc.selection import *
-from MOGPD_statistics_pc.multi_tree import init_primitives_general, init_toolbox_dual
+from MO_GP_statistics_pc import ea_simple_elitism
+from MO_GP_statistics_pc.ParallelToolbox import ParallelToolbox
+from MO_GP_statistics_pc.selection import *
+from MO_GP_statistics_pc.multi_tree import init_primitives_general, init_toolbox_dual
 
 import sys
-from MOGPD_statistics_pc import saveFile
+from MO_GP_statistics_pc import saveFile
 import time
 import random
 import multiprocessing

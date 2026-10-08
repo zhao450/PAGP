@@ -4,9 +4,9 @@ import numpy as np,math
 import hashlib
 from deap import tools
 
-from MOGPD_statistics_pc import saveFile
-from MOGPD_statistics_pc.selection import selElitistAndTournament
-from MOGPD_statistics_pc.calculate_pc import computer_PC
+from MO_GP_statistics_pc import saveFile
+from MO_GP_statistics_pc.selection import selElitistAndTournament
+from MO_GP_statistics_pc.calculate_pc import computer_PC
 import math
 from math import dist, log10
 from scipy.stats import norm

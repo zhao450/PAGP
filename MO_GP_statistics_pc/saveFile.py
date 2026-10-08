@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 
 def save_individual(randomSeeds, dataSetName,individuals):
-    with open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'.pickle', 'wb') as file:
+    with open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'.pickle', 'wb') as file:
         pickle.dump(individuals, file, protocol=pickle.HIGHEST_PROTOCOL)
     file.close()
     return
@@ -44,7 +44,7 @@ def save_each_gen_best_individual_meng(randomSeeds, dataSetName, best_ind_all_ge
 
         individual_dict.__setitem__(gen, individual)
 
-    with open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_kmeans_individual_' + dataSetName + '.pkl', "wb") as fileName_individual:
+    with open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_kmeans_individual_' + dataSetName + '.pkl', "wb") as fileName_individual:
         pickle.dump(individual_dict , fileName_individual)
 
     return
@@ -77,7 +77,7 @@ def save_top_inds_final_gen_meng(randomSeeds, pop_size, cross_rate, mute_rate, t
 
         individual_dict.__setitem__(gen, individual)
 
-    with open('./MOGPD_statistics_pc/train/' + str(randomSeeds) + '_MOGPD_top_individuals_final_gen_statistics_pc_mut'+'_'+str(pop_size)+'_'+str(cross_rate)+'_'+str(mute_rate)+'_'+str(t_ration)+'_'+str(delta)+'_'+ '.pkl', "wb") as fileName_individual:
+    with open('./MO_GP_statistics_pc/train/' + str(randomSeeds) + '_MOGPD_top_individuals_final_gen_statistics_pc_mut'+'_'+str(pop_size)+'_'+str(cross_rate)+'_'+str(mute_rate)+'_'+str(t_ration)+'_'+str(delta)+'_'+ '.pkl', "wb") as fileName_individual:
         pickle.dump(individual_dict , fileName_individual)
 
     return
@@ -110,14 +110,14 @@ def save_top_inds_final_gen(randomSeeds, top_inds_fitness_final_gen):
 
         individual_dict.__setitem__(gen, individual)
 
-    output_path = Path('./MOGPD_statistics_pc/train/' + str(randomSeeds) + '_MOGPD_top_individuals_final_gen_statistics_pc_mut'+ '.pkl')
+    output_path = Path('./MO_GP_statistics_pc/train/' + str(randomSeeds) + '_MOGPD_top_individuals_final_gen_statistics_pc_mut'+ '.pkl')
     with output_path.open("wb") as fileName_individual:
         pickle.dump(individual_dict , fileName_individual)
 
     return output_path
 
 def save_individual_to_txt(randomSeeds, dataSetName,individuals): 
-    file = open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'.txt', 'w')
+    file = open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'.txt', 'w')
     file.write('Individual:\n')
     file.write('Tree 0:\n')
     file.write(str(individuals[0]) + '\n')
@@ -129,13 +129,13 @@ def save_individual_to_txt(randomSeeds, dataSetName,individuals):
     return
 
 def clear_individual_each_gen_to_txt(randomSeeds, dataSetName): 
-    file = open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_each_gen.txt', 'w') 
+    file = open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_each_gen.txt', 'w') 
     file.write("Best individuals from each gen:\n")
     file.close()
     return
 
 def save_individual_each_gen_to_txt(randomSeeds, dataSetName, individuals, gen): 
-    file = open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_each_gen.txt', 'a') 
+    file = open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_each_gen.txt', 'a') 
     file.write('Individual:\n')
     file.write('Tree 0:\n')
     file.write(str(individuals[0]) + '\n')
@@ -147,7 +147,7 @@ def save_individual_each_gen_to_txt(randomSeeds, dataSetName, individuals, gen):
     return
 
 def save_top_inds_with_fitness_final_gen_to_txt(randomSeeds, dataSetName, individuals, fitnesses):
-    file = open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_top_inds_with_fitness_final_gen.txt', 'w')
+    file = open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_' + dataSetName+'_top_inds_with_fitness_final_gen.txt', 'w')
     for i in range(len(individuals)):
         individual=individuals[i]
         file.write('Individual:' + str(i) + '\n')
@@ -164,24 +164,24 @@ def save_top_inds_with_fitness_final_gen_to_txt(randomSeeds, dataSetName, indivi
     return
 
 def save_archive(randomSeeds, dataSetName,individuals):
-    with open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_archive' + dataSetName+'.pickle', 'wb') as file:
+    with open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_archive' + dataSetName+'.pickle', 'wb') as file:
         pickle.dump(individuals, file, protocol=pickle.HIGHEST_PROTOCOL)
     file.close()
     return
 
 def save_pop(randomSeeds, dataSetName,individuals):
-    with open('./MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_pop' + dataSetName+'.pickle', 'wb') as file:
+    with open('./MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds) + '_pop' + dataSetName+'.pickle', 'wb') as file:
         pickle.dump(individuals, file, protocol=pickle.HIGHEST_PROTOCOL)
     file.close()
     return
 
 def saveMinFitness(randomSeeds, dataSetName, min_fitness):
-    fileName1= './MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_min_fitness' + dataSetName
+    fileName1= './MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_min_fitness' + dataSetName
     np.save(fileName1, min_fitness)
     return
 
 def save_top_inds_fitness_final_gen(randomSeeds, dataSetName, min_fitness):
-    fileName1= './MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_top_inds_fitness_final_gen' + dataSetName
+    fileName1= './MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_top_inds_fitness_final_gen' + dataSetName
     np.save(fileName1, min_fitness)
     return
 
@@ -324,6 +324,6 @@ def save_completion_marker(randomSeeds, run_tag, config_fingerprint, tree_path, 
     return _atomic_replace(marker, lambda handle: json.dump(payload, handle, sort_keys=True, separators=(",", ":")))
 
 def saveRunningTime(randomSeeds, dataSetName, running_time):
-    fileName1= './MOGPD_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_running_time' + dataSetName
+    fileName1= './MO_GP_statistics_pc/train/scenario_' + str(dataSetName) + '/' + str(randomSeeds)+'_running_time' + dataSetName
     np.save(fileName1, running_time)
     return
